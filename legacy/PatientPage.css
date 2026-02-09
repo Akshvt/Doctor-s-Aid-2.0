@@ -1,0 +1,176 @@
+/* Patient Page Styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.patient-page {
+  animation: bgColorShift 20s infinite alternate;
+  padding: 0 20px;
+  opacity: 0;
+  animation-name: fadeIn, bgColorShift;
+  animation-duration: 1s, 20s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1, infinite;
+  animation-timing-function: ease, linear;
+}
+
+/* Hero Section */
+.hero {
+  background: rgba(255, 255, 255, 0.8);
+  color: #343a40;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 10px;
+  animation: fadeInUp 1s forwards 1s;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* Key Features */
+.key-features {
+  padding: 40px;
+}
+
+.key-features h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature {
+  background: linear-gradient(to right, #f8f9fa, #e9ecef);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+}
+
+.feature:hover {
+  transform: scale(1.1);
+  background: linear-gradient(to right, #dee2e6, #ced4da);
+}
+
+/* Login Section */
+.login-section {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  margin-top: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.login-section:hover {
+  transform: scale(1.02);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form input {
+  padding: 12px 20px;
+  margin: 10px 0;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.login-form input:focus {
+  border-color: #20c997;
+  outline: none;
+}
+
+.login-form button {
+  background-color: #20c997;
+  padding: 12px 20px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: #198754;
+  transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(108, 117, 125, 0.9);
+  color: white;
+  font-size: 14px;
+}
+
+.footer:hover {
+  background-color: rgba(73, 80, 87, 0.9);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide-up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Background Color Shift Animation */
+@keyframes bgColorShift {
+  0% {
+    background-color: #f0f8ff;
+  }
+  25% {
+    background-color: #e0f7fa;
+  }
+  50% {
+    background-color: #f3e5f5;
+  }
+  75% {
+    background-color: #fff3e0;
+  }
+  100% {
+    background-color: #e8f5e9;
+  }
+}

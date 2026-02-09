@@ -1,0 +1,43 @@
+/* NavbarPatient Styles */
+.navbar-patient {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-patient .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.navbar-patient .sidebar-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.navbar-patient .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-patient .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.navbar-patient .nav-links li a:hover {
+    opacity: 0.8;
+}

@@ -1,0 +1,119 @@
+/* General Form Container */
+.staff-patient-info-container {
+    width: 60%;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  
+  
+  /* Form Title */
+  .form-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    animation: slideDown 1s ease-in-out;
+  }
+  
+  /* Section Titles */
+  .section-title {
+    font-size: 22px;
+    color: #17a2b8;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  /* Input Fields */
+  .form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 48%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .form-group textarea {
+    width: 100%;
+    height: 80px;
+    resize: none;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: #17a2b8;
+    box-shadow: 0 0 5px rgba(23, 162, 184, 0.5);
+    outline: none;
+  }
+  
+  /* Submit Button */
+  .submit-btn {
+    background: #17a2b8;
+    color: white;
+    padding: 15px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .submit-btn:hover {
+    background: #138496;
+    transform: scale(1.05);
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .staff-patient-info-container {
+      width: 90%;
+    }
+  
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+    }
+  }
+  

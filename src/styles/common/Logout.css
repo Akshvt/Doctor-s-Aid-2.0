@@ -1,0 +1,138 @@
+/* ===================================
+   LOGOUT PAGE STYLES
+   Premium Logout Experience
+   =================================== */
+
+.logout-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: var(--space-6);
+}
+
+/* Background */
+.logout-bg {
+    position: fixed;
+    inset: 0;
+    background: var(--bg-primary);
+    z-index: -2;
+}
+
+.logout-grid {
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(var(--border-light) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border-light) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+/* Card */
+.logout-card {
+    text-align: center;
+    padding: var(--space-12);
+    background: var(--bg-glass);
+    backdrop-filter: blur(var(--blur-lg));
+    -webkit-backdrop-filter: blur(var(--blur-lg));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--glass-shadow);
+    max-width: 400px;
+    width: 100%;
+}
+
+.logout-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--space-6);
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+    border-radius: var(--radius-2xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.logout-icon svg {
+    width: 40px;
+    height: 40px;
+}
+
+.logout-card h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-2);
+}
+
+.logout-card p {
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-8);
+}
+
+/* Progress Bar */
+.progress-bar {
+    height: 4px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin-bottom: var(--space-4);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-hover) 100%);
+    border-radius: var(--radius-full);
+    animation: progress 2.5s ease-out forwards;
+}
+
+@keyframes progress {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.redirect-text {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+/* Animations */
+.slide-up {
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor Login</title>
+  <link rel="stylesheet" href="styles/Doctor_Login_Page.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="login-page">
+    <div class="background-layer"></div>
+
+    <div class="login-container">
+      <h2>Doctor Login</h2>
+      <form class="login-form" onsubmit="return handleLogin(event)">
+        <input
+          type="text"
+          placeholder="Username"
+          id="username"
+          class="login-input"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          id="password"
+          class="login-input"
+          onkeydown="handleKeyDown(event)"
+        />
+        <button type="submit" class="login-btn">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function handleLogin(event) {
+      event.preventDefault();
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      if (username && password) {
+        window.location.href = "/doctor";
+      }
+    }
+
+    function handleKeyDown(e) {
+      if (e.key === "Enter") {
+        handleLogin(e);
+      }
+    }
+  </script>
+</body>
+</html>

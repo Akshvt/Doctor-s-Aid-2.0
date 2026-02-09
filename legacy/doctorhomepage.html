@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor's Aid - Home</title>
+  <link rel="stylesheet" href="styles/HomePage.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="home-page">
+    <!-- Background Layer with Blur -->
+    <div class="background-layer"></div>
+
+    <!-- Content Layer (Text and Buttons) -->
+    <div class="home-page-content">
+      <h1>Welcome to Doctor's Aid</h1>
+
+      <div class="button-box">
+        <p class="select-text">You are a.....</p>
+        <div class="button-container">
+          <button class="doctor-btn" onclick="location.href='/doctor-login'">Doctor</button>
+          <button class="patient-btn" onclick="location.href='/patient'">Patient</button>
+          <button class="staff-btn" onclick="location.href='/staff-login'">Staff</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

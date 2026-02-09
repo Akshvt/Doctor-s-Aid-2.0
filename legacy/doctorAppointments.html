@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor Appointments</title>
+  <link rel="stylesheet" href="appointments_view_doctor.css" />
+</head>
+<body>
+  <div class="staff-appointments">
+    <h1>Booked Appointments</h1>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <input
+        type="text"
+        id="searchBar"
+        class="search-bar"
+        placeholder="Search by Patient Name..."
+        oninput="filterAppointments()"
+      />
+      <input
+        type="date"
+        id="dateFilter"
+        class="date-filter"
+        onchange="filterAppointments()"
+      />
+    </div>
+
+    <!-- Appointment Table -->
+    <div class="table-container">
+      <table id="appointmentTable">
+        <thead>
+          <tr>
+            <th>App_Id</th>
+            <th>Doc_Id</th>
+            <th>P_Id</th>
+            <th>P_Name</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rows will be populated by JS -->
+        </tbody>
+      </table>
+      <p id="noResults" style="display: none; text-align:center;">No appointments found.</p>
+    </div>
+
+    <!-- Vitals Popup -->
+    <div class="vitals-popup" id="vitalsPopup" style="display: none;">
+      <h2>Patient Vitals</h2>
+      <p><strong>Blood Pressure:</strong> <span id="bp"></span></p>
+      <p><strong>Glucose:</strong> <span id="glucose"></span></p>
+      <p><strong>Pulse:</strong> <span id="pulse"></span></p>
+      <p><strong>Temperature:</strong> <span id="temp"></span></p>
+      <p><strong>Measurement Time:</strong> <span id="mTime"></span></p>
+      <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    const appointments = [
+      {
+        appId: "APP201",
+        docId: "DOC101",
+        pId: "P101",
+        name: "Ravi Mehta",
+        date: "2025-04-04",
+        vitals: {
+          bloodPressure: "122/80",
+          glucose: "98",
+          pulse: "74",
+          temperature: "98.7°F",
+          measurementTime: "09:30 AM"
+        }
+      },
+      {
+        appId: "APP202",
+        docId: "DOC101",
+        pId: "P102",
+        name: "Sneha Kapoor",
+        date: "2025-04-04",
+        vitals: {
+          bloodPressure: "128/86",
+          glucose: "105",
+          pulse: "78",
+          temperature: "99.0°F",
+          measurementTime: "11:15 AM"
+        }
+      },
+      {
+        appId: "APP203",
+        docId: "DOC101",
+        pId: "P103",
+        name: "Vikram Singh",
+        date: "2025-04-05",
+        vitals: {
+          bloodPressure: "115/75",
+          glucose: "100",
+          pulse: "69",
+          temperature: "98.2°F",
+          measurementTime: "01:00 PM"
+        }
+      }
+    ];
+
+    function renderTable(filtered) {
+      const tbody = document.querySelector("#appointmentTable tbody");
+      tbody.innerHTML = "";
+
+      if (filtered.length === 0) {
+        document.getElementById("noResults").style.display = "block";
+        return;
+      }
+
+      document.getElementById("noResults").style.display = "none";
+
+      filtered.forEach((appointment, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${appointment.appId}</td>
+          <td>${appointment.docId}</td>
+          <td>${appointment.pId}</td>
+          <td>${appointment.name}</td>
+          <td><button class="view-btn" onclick="showVitals(${index})">View</button></td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    function filterAppointments() {
+      const search = document.getElementById("searchBar").value.toLowerCase();
+      const date = document.getElementById("dateFilter").value;
+
+      const filtered = appointments.filter(appt => 
+        appt.name.toLowerCase().includes(search) &&
+        (!date || appt.date === date)
+      );
+
+      renderTable(filtered);
+    }
+
+    function showVitals(index) {
+      const vitals = appointments[index].vitals;
+      document.getElementById("bp").innerText = vitals.bloodPressure;
+      document.getElementById("glucose").innerText = vitals.glucose;
+      document.getElementById("pulse").innerText = vitals.pulse;
+      document.getElementById("temp").innerText = vitals.temperature;
+      document.getElementById("mTime").innerText = vitals.measurementTime;
+      document.getElementById("vitalsPopup").style.display = "block";
+    }
+
+    function closePopup() {
+      document.getElementById("vitalsPopup").style.display = "none";
+    }
+
+    // Initial render
+    renderTable(appointments);
+  </script>
+</body>
+</html>

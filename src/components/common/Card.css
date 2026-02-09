@@ -1,0 +1,129 @@
+/* ===================================
+   CARD COMPONENT STYLES
+   Glassmorphism Card with Hover Effects
+   =================================== */
+
+.card {
+    border-radius: var(--radius-xl);
+    transition: all var(--transition-base);
+    position: relative;
+}
+
+/* ========== VARIANTS ========== */
+
+/* Glass Card */
+.card-glass {
+    background: var(--bg-glass);
+    backdrop-filter: blur(var(--blur-md));
+    -webkit-backdrop-filter: blur(var(--blur-md));
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+/* Solid Card */
+.card-solid {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-md);
+}
+
+/* Elevated Card */
+.card-elevated {
+    background: var(--bg-secondary);
+    border: none;
+    box-shadow: var(--shadow-lg);
+}
+
+/* Outlined Card */
+.card-outlined {
+    background: transparent;
+    border: 1px solid var(--border-medium);
+}
+
+/* ========== PADDING SIZES ========== */
+
+.card-padding-sm {
+    padding: var(--space-4);
+}
+
+.card-padding-md {
+    padding: var(--space-6);
+}
+
+.card-padding-lg {
+    padding: var(--space-8);
+}
+
+.card-padding-none {
+    padding: 0;
+}
+
+/* ========== HOVER EFFECTS ========== */
+
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.card-glass.card-hover:hover {
+    background: var(--bg-glass-hover);
+    border-color: var(--accent);
+}
+
+/* ========== CLICKABLE ========== */
+
+.card-clickable {
+    cursor: pointer;
+}
+
+.card-clickable:active {
+    transform: translateY(-2px) scale(0.99);
+}
+
+/* ========== SUBCOMPONENTS ========== */
+
+.card-header {
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--border-light);
+    margin-bottom: var(--space-4);
+}
+
+.card-header h1,
+.card-header h2,
+.card-header h3,
+.card-header h4 {
+    margin: 0;
+}
+
+.card-body {
+    flex: 1;
+}
+
+.card-footer {
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border-light);
+    margin-top: var(--space-4);
+    display: flex;
+    gap: var(--space-3);
+    justify-content: flex-end;
+}
+
+/* ========== DECORATIVE ELEMENTS ========== */
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.card-glass.card-hover:hover::before,
+.card-elevated.card-hover:hover::before {
+    opacity: 1;
+}

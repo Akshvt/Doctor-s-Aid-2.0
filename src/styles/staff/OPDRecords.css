@@ -1,0 +1,82 @@
+
+/* Wrapper for full-page background */
+.opd-records-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e0f7fa, #f0f4f8); /* Soft gradient */
+    padding: 40px 20px;
+  }
+  
+  /* Container holding the form */
+  .opd-records-container {
+    background: #ffffff;
+    padding: 40px 30px;
+    max-width: 650px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .opd-records-container:hover {
+    transform: translateY(-4px);
+  }
+  
+  .opd-records-container h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #1a3b5d;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+  }
+  
+  /* Form layout styling */
+  .opd-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  
+  @media (min-width: 600px) {
+    .opd-form {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+  }
+  
+  /* Input fields */
+  .opd-form input {
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 1px solid #bbb;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+  
+  .opd-form input:focus {
+    border-color: #0077b6;
+    box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.15);
+  }
+  
+  /* Submit Button */
+  .submit-btn {
+    grid-column: span 2;
+    background-color: #0077b6;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #005f91;
+  }
+  

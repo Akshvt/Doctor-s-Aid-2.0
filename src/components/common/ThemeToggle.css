@@ -1,0 +1,79 @@
+/* Theme Toggle Styles */
+.theme-toggle {
+    position: fixed;
+    top: var(--space-4);
+    right: var(--space-4);
+    z-index: var(--z-sticky);
+    background: var(--bg-glass);
+    backdrop-filter: blur(var(--blur-md));
+    -webkit-backdrop-filter: blur(var(--blur-md));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-full);
+    padding: var(--space-1);
+    width: 56px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-md);
+}
+
+.theme-toggle:hover {
+    box-shadow: var(--shadow-lg);
+    transform: scale(1.05);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+.toggle-track {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.toggle-thumb {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    border-radius: var(--radius-full);
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-bounce);
+    box-shadow: var(--shadow-sm);
+}
+
+.toggle-thumb.light {
+    left: 2px;
+    background: linear-gradient(135deg, #F59E0B 0%, #F97316 100%);
+}
+
+.toggle-thumb.dark {
+    left: calc(100% - 26px);
+    background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+}
+
+.icon {
+    width: 14px;
+    height: 14px;
+    color: white;
+    transition: all var(--transition-fast);
+}
+
+.icon.hidden {
+    opacity: 0;
+    transform: scale(0) rotate(180deg);
+}
+
+.sun {
+    position: absolute;
+}
+
+.moon {
+    position: absolute;
+}

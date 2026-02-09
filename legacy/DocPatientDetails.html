@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Saved Patient Information</title>
+  <link rel="stylesheet" href="patient_details_view.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <div class="saved-patient-info">
+    <h1>Saved Patient Information</h1>
+
+    <!-- Search Bar -->
+    <input
+      type="text"
+      placeholder="Search by name..."
+      class="search-bar"
+      id="searchBar"
+      onkeyup="filterPatients()"
+    />
+
+    <!-- Patient Table -->
+    <table class="patient-table" id="patientTable">
+      <thead>
+        <tr>
+          <th>P_Id</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>DOB</th>
+          <th>Phone</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="patientTableBody">
+        <!-- JS will populate this -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal-overlay" onclick="closeModal()" style="display: none;">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <h2>Patient Details</h2>
+      <div id="modalDetails"></div>
+      <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script src="patient_details_view.js"></script>
+</body>
+</html>

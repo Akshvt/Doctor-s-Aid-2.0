@@ -1,0 +1,123 @@
+/* General Page Styling */
+.heart-disease-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(-45deg, #ffecd2, #fcb69f, #ff9a9e, #fad0c4);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+}
+
+/* Form Container - Now Wider */
+.heart-disease-form {
+  width: 70%;
+  max-width: 800px;
+  padding: 40px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Form Title */
+.heart-disease-form h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form Labels */
+.heart-disease-form label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 12px 0 6px;
+  text-align: left;
+  color: #555;
+}
+
+/* Input Fields - Wider */
+.heart-disease-form input,
+.heart-disease-form select {
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  margin-bottom: 15px;
+  border: 2px solid #ff758c;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Focus Effect */
+.heart-disease-form input:focus,
+.heart-disease-form select:focus {
+  border-color: #ff4b5c;
+  box-shadow: 0px 0px 12px rgba(255, 75, 92, 0.3);
+}
+
+/* Submit Button - More Stylish */
+.heart-disease-form button {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #ff4b5c;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.heart-disease-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.prediction-result {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+  width: 80%;
+  max-width: 400px;
+}
+
+/* Hover Effect */
+.heart-disease-form button:hover {
+  background-color: #d63447;
+  transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
