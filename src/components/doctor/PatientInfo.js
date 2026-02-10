@@ -20,13 +20,19 @@ const PatientInfo = () => {
     { id: 10, firstName: "Divya", lastName: "Iyer", dateRegistered: "2024-12-01" },
   ]);
 
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
   const handleViewDetails = (id) => {
     navigate(`/patient-details/${id}`);
   };
 
   return (
-    <div className="main-container">
-      <Sidebar />
+    <div className={`main-container ${sidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
+      <Sidebar isOpen={sidebarOpen} toggle={toggleSidebar} />
       <div className="content-container">
         <h1>Patient Info</h1>
         <ul>

@@ -1,18 +1,37 @@
 /* Patient Info Page Styles - Modern UI */
+.content-container {
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  /* Ensure background is set */
+}
+
+.main-container.sidebar-open .content-container {
+  margin-left: 250px;
+}
+
+.main-container.sidebar-closed .content-container {
+  margin-left: 70px;
+}
+
 ul {
   list-style-type: none;
   padding: 0;
   margin-top: 20px;
-  background: rgba(255, 255, 255, 0.2); /* Glassmorphism effect */
+  background: var(--bg-glass);
+  /* Theme-aware glass effect */
   backdrop-filter: blur(10px);
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--glass-border);
 }
 
 /* List Items */
 li {
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
   padding: 15px;
   margin-bottom: 10px;
   border-radius: 8px;
@@ -20,18 +39,20 @@ li {
   justify-content: space-between;
   align-items: center;
   transition: all 0.3s ease-in-out;
+  border: 1px solid var(--border-light);
 }
 
 /* Hover Effect */
 li:hover {
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--bg-tertiary);
   transform: translateY(-3px);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
 }
 
 /* Buttons */
 button {
-  background: linear-gradient(135deg, #3A0CA3, #5A189A); /* Gradient effect */
+  background: linear-gradient(135deg, #3A0CA3, #5A189A);
+  /* Gradient effect */
   color: white;
   border: none;
   padding: 12px 18px;

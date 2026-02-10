@@ -1,57 +1,115 @@
 /* Sidebar styles */
 .sidebar {
-  width: 250px;
-  background: linear-gradient(180deg, #000000 50%, #585858 100%);
-  min-height: 100vh;
-  padding: 20px;
-  color: white;
+  background: var(--bg-secondary);
+  height: 100vh;
+  padding: 20px 10px;
+  color: var(--text-primary);
   position: fixed;
-  z-index: 2;
-}
-
-nav {
-  position: relative;
-  z-index: 3;
-}
-
-.nav-menu {
+  z-index: 100;
+  transition: width 0.3s ease;
+  border-right: 1px solid var(--border-light);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+}
+
+.sidebar.open {
+  width: 250px;
+}
+
+.sidebar.closed {
+  width: 70px;
+  padding: 20px 5px;
+}
+
+/* Header & Toggle */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding: 0 10px;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 10px 0;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.logo-container h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  white-space: nowrap;
+  color: var(--text-primary);
+  margin: 0;
 }
 
 .sidebar-logo {
-  width: 40px;
+  width: 32px;
   height: auto;
-  margin-right: 10px;
-  pointer-events: none;
+}
+
+.sidebar-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-toggle:hover {
+  background: var(--bg-tertiary);
+  color: var(--accent);
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
 }
 
 .nav-item {
-  display: block;
-  color: white;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-secondary);
   text-decoration: none;
-  font-size: 18px;
-  padding: 10px 15px;
-  border-radius: 5px;
-  transition: background 0.3s ease;
-  cursor: pointer;
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .nav-item:hover {
-  background: #a09b8e;
+  background: var(--bg-tertiary);
+  color: var(--accent);
 }
 
 .nav-item.active {
-  background: #a09b8e;
-  font-weight: bold;
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Dark mode adjustments for active state */
+[data-theme="dark"] .nav-item.active {
+  background: rgba(59, 130, 246, 0.15);
+  /* Tinted background for dark mode */
+}
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  /* Prevent shrinking */
 }
 
 /* Dropdown styles */
@@ -59,35 +117,59 @@ nav {
   position: relative;
 }
 
+.prediction-trigger {
+  cursor: pointer;
+  justify-content: flex-start;
+}
+
 .dropdown-content {
   display: none;
   flex-direction: column;
-  gap: 10px;
-  background: #444;
-  padding: 10px;
-  border-radius: 5px;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: max-content;
-  z-index: 4;
+  gap: 5px;
+  background: var(--bg-tertiary);
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 8px;
+  margin-top: 5px;
 }
 
-.dropdown:hover .dropdown-content {
+/* Show dropdown on hover only if sidebar is open */
+.sidebar.open .dropdown:hover .dropdown-content {
   display: flex;
 }
 
 .sub-nav-item {
-  color: white;
+  color: var(--text-secondary);
   text-decoration: none;
-  padding: 5px 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  transition: background 0.3s ease;
+  padding: 8px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
 }
 
 .sub-nav-item:hover,
 .sub-nav-item.active {
-  background: #a09b8e;
-  font-weight: bold;
+  background: var(--bg-primary);
+  color: var(--accent);
+}
+
+/* Sidebar Closed Adjustments */
+.sidebar.closed .nav-item {
+  justify-content: center;
+  padding: 12px 0;
+}
+
+.sidebar.closed .logo-container {
+  justify-content: center;
+  width: 100%;
+}
+
+.sidebar.closed .sidebar-header {
+  flex-direction: column;
+  gap: 15px;
+  padding: 0;
+}
+
+.sidebar.closed .sidebar-toggle {
+  margin-top: 10px;
 }
